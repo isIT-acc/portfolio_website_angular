@@ -1,0 +1,105 @@
+@import "vars";
+
+%divider {
+  background-color: $orange;
+  height: 2px;
+  border: none;
+  width: 2.5rem;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+%subheading {
+  // margin-top: 3.6rem;
+  font-size: 2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+  // margin-bottom: 1rem;
+}
+
+%btn_common {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: $orange;
+    transition: all 0.5s;
+  }
+}
+// navbar highliting of menu items
+.highlited {
+  border-bottom: 3px solid rgb(196, 153, 14);
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.py-1 {
+  padding: 0.5rem 0;
+}
+.py-2 {
+  padding: 1rem 0;
+}
+.py-3 {
+  padding: 1.5rem 0;
+}
+
+.btn {
+  @extend %btn_common;
+  color: $main_dark_grey;
+  background-color: $main_light_grey;
+}
+
+.btn-blue {
+  @extend %btn_common;
+  color: #fff;
+  background-color: $main_color;
+  font-family: Arial;
+  border: none;
+}
+
+.uppercase_text {
+  text-transform: uppercase;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.orange {
+  color: $orange;
+}
+
+.white {
+  color: $white;
+}
+
+.fw-1 {
+  font-weight: $min_font_weight;
+}
+
+.centered {
+  margin: auto;
+}
+
+.block {
+  display: block;
+}
+
+.red {
+  color: red;
+}
+
+// $main_dark_grey, main_light_grey,

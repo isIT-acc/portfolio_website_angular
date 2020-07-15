@@ -1,0 +1,89 @@
+<div class="bg_image"></div>
+
+<section class="about">
+  <div class="container">
+    <div class="intro">
+      <h1 class="uppercase_text text_center">обо мне</h1>
+      <hr class="orange" />
+      <p class="text_center">
+        Позвольте рассказать немного о себе и о том, что я делаю...
+      </p>
+    </div>
+    <div class="achieves_container">
+      <div class="greeting">
+        <h5 class="uppercase_text text_center">ваш проект в надёжных руках</h5>
+        <p class="text_center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          vel ab non vero saepe distinctio consectetur corrupti omnis, ratione
+          rem ex sint consequuntur natus ut ducimus quibusdam animi voluptatibus
+          blanditiis, incidunt molestias nesciunt voluptates? Voluptatum totam
+          vero ducimus sunt impedit rem in quia, atque qui quidem nisi ipsa
+          laudantium repellat? Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Architecto vel ab non vero saepe distinctio
+          consectetur corrupti omnis, ratione rem ex sint consequuntur natus ut
+          ducimus quibusdam animi voluptatibus blanditiis, incidunt molestias
+          nesciunt voluptates? Voluptatum totam vero ducimus sunt impedit rem in
+          quia, atque qui quidem nisi ipsa laudantium repellat? rem ex sint
+          consequuntur natus ut ducimus quibusdam animi voluptatibus blanditiis,
+          incidunt molestias nesciunt voluptates? Voluptatum totam vero ducimus
+          sunt impedit rem in quia, atque qui quidem nisi ipsa laudantium
+          repellat? ducimus quibusdam animi voluptatibus blanditiis, incidunt
+          molestias nesciunt voluptates? Voluptatum totam vero ducimus sunt
+          impedit rem in quia, atque qui quidem nisi ipsa laudantium repellat?
+          rem ex sint consequuntur natus ut ducimus quibusdam animi voluptatibus
+          blanditiis, incidunt molestias nesciunt voluptates? Voluptatum totam
+          vero ducimus sunt impedit rem in quia, atque qui quidem nisi ipsa
+          laudantium repellat?
+        </p>
+      </div>
+      <div class="author_portrait"></div>
+
+      <div class="achieve text_center" *ngFor="let item of achieve_items">
+        <i class="fas {{ item.icon_name }} fa-3x orange"></i>
+        <h3 class="uppercase_text">{{ item.achieve_name }}</h3>
+        <p>{{ item.descr }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="tech_knowledges">
+    <div class="container">
+      <h3 class="uppercase_text text_center">технические знания</h3>
+      <hr />
+      <div class="levels" *ngFor="let bar of prog_bars">
+        <p class="label uppercase_text">{{ bar.knowl_name }}</p>
+        <div><span style="width: {{ bar.width }}%;"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="tech_knowl_logos">
+    <div class="container">
+      <div class="logos_container">
+        <img
+          *ngFor="let logo_url of logos_urls"
+          src="{{ logo_url.path }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="feedbacks">
+    <div class="container">
+      <h1 class="uppercase_text text_center">отзывы</h1>
+      <hr />
+      <p class="text_center">
+        Обратите внимание на то, что говорят мои клиенты...
+      </p>
+      <div class="feedbacks_container">
+        <div class="feedback" *ngFor="let item of feedbacks">
+          <div class="text">{{ item.text }}</div>
+          <div class="pair_container">
+            <img src="{{ item.photo }}" /><span
+              >{{ item.name }},{{ item.city }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</section>

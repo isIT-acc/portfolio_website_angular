@@ -7,7 +7,15 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "sass_mainpage": "node-sass -w scss/mainpage -o src/app/components/main-page",
+    "sass_navbar": "node-sass -w scss/navbar -o src/app/components/navbar",
+    "sass_about": "node-sass -w scss/about -o src/app/components/about",
+    "sass_footer": "node-sass -w scss/footer -o src/app/components/footer",
+    "sass_bg_for_hor_navbar": "node-sass -w scss/bg_for_hor_navbar -o src/app/components/bg-for-hor-navbar",
+    "sass_my_works": "node-sass -w scss/my_works -o src/app/components/my-works",
+    "sass_contact_with_me": "node-sass -w scss/contact_with_me -o src/app/components/contact-with-me",
+    "sass_main": "node-sass -w scss/main -o src/"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +27,9 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "angular2-flash-messages": "^3.0.1",
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.14.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

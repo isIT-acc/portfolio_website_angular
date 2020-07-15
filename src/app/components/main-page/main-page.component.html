@@ -1,0 +1,75 @@
+<!-- <h1>Я-Джон Берг, фотограф</h1>
+<h1>Я-Джон Берг, UI/UX дизайнер</h1> -->
+
+<div class="main_page">
+  <div class="main_page_overlay">
+    <div class="container">
+      <div class="main_page_container">
+        <h1 class="text_center">
+          Я-Джон Берг, фотогораф, UI/UX дизайнер, HTML/CSS верстальщик
+        </h1>
+        <a routerLink="my_works" class="btn">Посмотреть мои работы</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="specs">
+  <div class="container">
+    <div class="specs_header">
+      <h3 class="uppercase_text text_center">
+        я специализируюсь на
+      </h3>
+      <hr class="divider" />
+      <p class="text_center">
+        фотографии, а также создании пользовательских интерфейсов для веб-сайтов
+        и мобильных приложений
+      </p>
+    </div>
+    <div class="specs_items">
+      <div class="item" *ngFor="let item of spec_items">
+        <div class="icon text_center">
+          <i class="fa {{ item.item_icon }} fa-2x orange"></i>
+        </div>
+        <div class="item_name text_center">{{ item.item_name }}</div>
+        <div class="item_descr text_center">
+          {{ item.item_descr }}
+        </div>
+      </div>
+    </div>
+    <div class="specs_achieves">
+      <div class="achieve" *ngFor="let achieve of specs_achieves">
+        <div class="icon text_center">
+          <i class="fas {{ achieve.achieve_icon }} fa-3x"></i>
+        </div>
+        <div class="achieve_name text_center">{{ achieve.achieve_name }}</div>
+        <div class="achieve_num text_center">
+          {{ achieve.achieve_num }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="workflow">
+  <div class="container">
+    <div class="text_center workflow_header">
+      <h1 class="uppercase_text fw-1">начало работы</h1>
+      <hr class="orange" />
+      <h3 class="fw-1">
+        Все мои проекты начинаются со следующих основных этапов:
+      </h3>
+    </div>
+    <div class="workflow_content">
+      <div
+        class="content text_center"
+        *ngFor="let item of workflow_content_items"
+      >
+        <i class="fas {{ item.icon_name }} fa-4x white">
+          <span class="fas">{{ item.number }}</span>
+        </i>
+        <h3 class="uppercase_text">{{ item.subheader }}</h3>
+        <p>{{ item.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

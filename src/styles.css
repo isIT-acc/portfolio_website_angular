@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.error, .success {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: Arial; }
+
+* {
+  margin: 0;
+  padding: 0;
+  /* color: white; */
+  font-family: "Open Sans Condensed", sans-serif; }
+
+.error {
+  background: red; }
+
+.success {
+  background: green; }

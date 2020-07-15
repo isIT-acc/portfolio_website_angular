@@ -1,0 +1,175 @@
+@import "../vars";
+@import "../utilities";
+.bg_image {
+  position: relative;
+  background-image: url("../../imgs/showcase.jpg");
+  background-size: cover;
+  height: $navbar_height + 30px;
+  background-position: right;
+  margin-top: -$navbar_height;
+  border-bottom: 3px solid $orange;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.about {
+  .intro {
+    h1 {
+      @extend %subheading;
+      margin-top: 3.75rem;
+      margin-bottom: 1rem;
+    }
+    hr {
+      @extend %divider;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+  .achieves_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    margin-top: 2rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    margin-bottom: 3rem;
+    .greeting {
+      padding-top: 1rem;
+      grid-column: 1 / span 2;
+      background-color: $main_light_grey;
+      border-right: 3px solid $orange;
+      h5 {
+        font-size: 1rem;
+      }
+    }
+    .author_portrait {
+      background-image: url("../../imgs/about.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .achieve {
+      i {
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  .tech_knowledges {
+    padding: 3.6rem 0px;
+    background-color: $main_color;
+    color: white;
+
+    h3 {
+      @extend %subheading;
+
+      margin-bottom: 1rem;
+    }
+    hr {
+      @extend %divider;
+    }
+    .levels {
+      .label {
+        margin-top: 0.7rem;
+      }
+      div {
+        height: 1.3rem;
+        background: #ccc;
+        border-radius: 5px;
+        span {
+          // width: 75%;
+          height: 100%;
+          background-color: $orange;
+          display: block;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .tech_knowl_logos {
+    background-color: #f4f4f4;
+    .logos_container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1.9rem 0;
+      img {
+        width: 73px;
+      }
+    }
+  }
+
+  .feedbacks {
+    margin-top: 4.6rem;
+    h1 {
+      @extend %subheading;
+      margin-bottom: 0.8rem;
+    }
+    hr {
+      @extend %divider;
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .feedbacks_container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 0.5rem;
+      .text {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .pair_container {
+        display: flex;
+        align-items: center;
+        img {
+          width: 3rem;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+      }
+      // span {
+
+      // }
+    }
+    margin-bottom: 4.25rem;
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  .bg_image {
+    margin-top: -$media_navbar_height;
+    height: $media_navbar_height + 30px;
+  }
+
+  .about {
+    .achieves_container {
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr auto auto auto;
+      .greeting {
+        grid-column: 1 / span 1;
+      }
+    }
+    .tech_knowl_logos {
+      display: none;
+    }
+    .feedbacks {
+      .feedbacks_container {
+        grid-template-columns: 1fr;
+        // grid-template-rows: repeat(4, 1fr);
+        .feedback {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

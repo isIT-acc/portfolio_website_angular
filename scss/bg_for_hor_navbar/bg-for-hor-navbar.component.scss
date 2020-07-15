@@ -1,0 +1,25 @@
+@import "../vars";
+@import "../utilities";
+.bg_image {
+  position: relative;
+  background-image: url("../../imgs/showcase.jpg");
+  background-size: cover;
+  height: 90px;
+  background-position: right;
+  margin-top: -$navbar_height;
+  border-bottom: 3px solid $orange;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  .bg_image {
+    margin-top: -$media_navbar_height;
+    height: $media_navbar_height + 30px;
+  }
+}

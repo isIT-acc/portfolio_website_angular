@@ -1,0 +1,45 @@
+@import "../vars";
+@import "../utilities";
+
+.footer {
+  margin-top: 2rem;
+  height: 5rem;
+  background-color: $main_color;
+
+  &_content {
+    // line-height: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .soc_icons {
+    display: flex;
+    .icon {
+      i {
+        margin-right: 1rem;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        line-height: 2.5rem;
+        text-align: center;
+      }
+      :hover {
+        background-color: $orange;
+      }
+    }
+
+    // justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  .footer {
+    padding: 1rem 0;
+    &_content {
+      flex-direction: column;
+    }
+  }
+}

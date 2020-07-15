@@ -1,0 +1,108 @@
+@import "../utilities";
+@import "../vars";
+
+.my_works {
+  .intro {
+    h2 {
+      @extend %subheading;
+      margin-top: 3.75rem;
+      margin-bottom: 1rem;
+    }
+    hr {
+      @extend %divider;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .works_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 300px 300px;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    .work_container {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      &:hover::before {
+        transform: translate(0%, 0%) rotate(-28deg) scale(2);
+        z-index: 1;
+        transition: all 2s;
+      }
+      &:hover .text {
+        z-index: 2;
+        top: 35%;
+
+        transition: top 1s;
+      }
+      &:hover img {
+        transform: scale(1.2);
+        transition: all 2s;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+        background-color: $orange;
+        opacity: 0.8;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        transform: translate(-120%, -120%) rotate(-28deg) scale(2);
+      }
+
+      img {
+        width: 100%;
+        transform: scale(1);
+      }
+
+      .text {
+        position: absolute;
+        width: 100%;
+        top: -150%;
+        text-align: center;
+        color: white;
+        // transform: translateY(-250%);
+
+        .text_category {
+          font-weight: bold;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+        }
+        .text_name {
+          font-size: 2rem;
+          margin-top: 1rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1027px) {
+  .my_works .works_container .work_container .text .text_name {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  .bg_image {
+    margin-top: -$media_navbar_height;
+    height: $media_navbar_height + 30px;
+  }
+  .my_works {
+    .works_container {
+      grid-template-columns: 1fr;
+      .work_container {
+        .text {
+          .text_name {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<app-bg-for-hor-navbar></app-bg-for-hor-navbar>
+<div class="contact_with_me">
+  <div class="container">
+    <div class="intro">
+      <h1>свяжитесь со мной</h1>
+      <hr />
+      <p class="text_center">
+        Вы можете воспользоваться формой ниже, отправить письмо на электронную
+        почту либо позвонить
+      </p>
+    </div>
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+      <div class="form_container">
+        <div class="form-group">
+          <label for="firstName" class="block">Имя</label>
+          <input
+            type="text"
+            name="firstName"
+            #clientFirstName="ngModel"
+            [(ngModel)]="clientAnswer.firstName"
+            maxlength="30"
+          />
+          <div class="red" *ngIf="clientFirstName.errors?.maxlength">
+            Максимальная длина - 30 символов
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="block">Ваша электронная почта</label>
+          <input
+            type="text"
+            name="email"
+            (click)="onClickEmailInput()"
+            #clientEmail="ngModel"
+            [(ngModel)]="clientAnswer.email"
+            required
+            pattern="^([A-Za-z0-9_\-]+)@([a-zA-Z0-9_\-]+)\.([a-zA-Z]{2,7})$"
+          />
+          <div
+            class="red"
+            *ngIf="
+              (clientEmail.errors?.required === true &&
+                clientEmail.touched === true) ||
+              showErrorMess.onEmail
+            "
+          >
+            Введите email
+          </div>
+          <div class="red" *ngIf="clientEmail.errors?.pattern">
+            Email невалидный
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="theme" class="block">Тема письма</label>
+          <input
+            type="text"
+            name="theme"
+            [(ngModel)]="clientAnswer.theme"
+            maxlength="50"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="block">Ваш номер телефона</label>
+          <input
+            type="text"
+            name="phone"
+            (click)="onClickPhoneInput()"
+            #clientPhone="ngModel"
+            [(ngModel)]="clientAnswer.phone"
+            pattern="\+?[7|8][0-9]{10}"
+            required
+          />
+          <div
+            class="red"
+            *ngIf="
+              (clientPhone.errors?.required === true &&
+                clientPhone.touched === true) ||
+              showErrorMess.onPhone
+            "
+          >
+            Введите номер телефона
+          </div>
+          <div class="red" *ngIf="clientPhone.errors?.pattern">
+            Номер телефона невалидный
+          </div>
+        </div>
+        <div class="form-group textarea_group">
+          <label for="message" class="block">Введите сообщение</label>
+          <textarea
+            (click)="onClickMessInput()"
+            #clientMessage="ngModel"
+            [(ngModel)]="clientAnswer.message"
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+          <div
+            class="red"
+            *ngIf="
+              (clientMessage.errors?.required === true &&
+                clientMessage.touched === true) ||
+              showErrorMess.onMess
+            "
+          >
+            Введите сообщение
+          </div>
+        </div>
+      </div>
+      <flash-messages></flash-messages>
+      <div class="submitCont text_center">
+        <input class="btn-blue" type="submit" value="Отправить" name="submit" />
+      </div>
+    </form>
+    <div class="contacts">
+      <div class="pack" *ngFor="let item of contact_items">
+        <i class="fas {{ item.icon }} fa-2x"></i>
+        <h2>{{ item.type }}</h2>
+        <p>{{ item.body }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

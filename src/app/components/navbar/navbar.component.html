@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <div id="mainNav">
+      <!-- <img id="logo">JBerg</img> -->
+      <img
+        (click)="clickOnLogo()"
+        routerLink="/"
+        src="./assets/imgs/logo.png"
+        id="logo"
+      />
+      <ul>
+        <li *ngFor="let item of menu_items">
+          <a
+            (click)="choosed_item = item.name"
+            [ngClass]="{ highlited: choosed_item === item.name }"
+            class="py-1 uppercase_text"
+            href=""
+            routerLink="{{ item.link }}"
+            >{{ item.name }}</a
+          >
+          <!-- property binding choosedItem=string in .ts -->
+          <!-- Class binding -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

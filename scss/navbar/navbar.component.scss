@@ -1,0 +1,65 @@
+@import "../utilities";
+@import "../vars";
+
+header {
+  position: relative;
+  z-index: 1;
+}
+#mainNav {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  height: $navbar_height;
+
+  #logo {
+    width: 103px;
+    height: $height_of_logo;
+
+    align-self: flex-end;
+  }
+  ul {
+    display: flex;
+    align-self: flex-end;
+
+    // justify-content: flex-end;
+    li {
+      margin: 0 23px;
+      a {
+        color: white;
+        font-size: 1rem;
+        &:hover {
+          border-bottom: 3px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  #mainNav {
+    flex-direction: column;
+    height: $media_navbar_height;
+
+    // justify-content: center;
+    #logo {
+      align-self: center;
+      margin-top: 1.35rem;
+    }
+    ul {
+      text-align: center;
+      flex-direction: column;
+      align-self: center;
+      li {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
+@media (max-height: 500px) {
+  .main_page_container {
+    position: relative;
+    z-index: ;
+    min-height: 261px;
+  }
+}

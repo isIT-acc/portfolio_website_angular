@@ -1,0 +1,251 @@
+@import "../vars";
+@import "../utilities";
+
+.main_page {
+  position: relative;
+  background-image: url("../../imgs/showcase.jpg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-top: -$navbar_height;
+
+  &_overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    .container {
+      height: 100%;
+    }
+  }
+
+  &_container {
+    // padding-top: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 3rem;
+    h1 {
+      color: $white;
+      font-size: 64px;
+    }
+    p {
+      color: $white;
+      font-size: 20.8px;
+    }
+    a {
+      font-size: 1rem;
+    }
+  }
+}
+
+.specs {
+  &_header {
+    h3 {
+      margin-top: 2.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: $min_font_weight;
+    }
+    .divider {
+      @extend %divider;
+    }
+    p {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+    }
+  }
+  &_items {
+    margin-top: 3rem;
+    display: flex;
+    .item {
+      .icon {
+        margin-bottom: 0.5rem;
+      }
+      &_name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.4rem;
+      }
+      &_descr {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &_achieves {
+    // margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    .achieve {
+      // margin-top: ;
+
+      width: 25%;
+
+      .icon {
+        line-height: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+      }
+      &_name {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        // margin-bottom: 0.4rem;
+        line-height: 2rem;
+      }
+      &_num {
+        margin-bottom: 4rem;
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      &:nth-child(2n) {
+        background: #ccc;
+      }
+      &:nth-child(2n + 1) {
+        background: #f4f4f4;
+      }
+    }
+  }
+}
+
+.workflow {
+  &_header {
+    h1 {
+      margin-top: 3rem;
+      margin-bottom: 1.3rem;
+    }
+    hr {
+      @extend %divider;
+    }
+    h3 {
+      // margin-top: 1.5rem;
+      margin: auto;
+      font-size: 1.3rem;
+    }
+  }
+  &_content {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: space-between;
+    .content {
+      // margin: 0 0.35rem;
+      width: 24%;
+    }
+    i {
+      position: relative;
+      background-color: $main-color;
+      // padding: 1.5rem;
+      width: 8rem;
+      height: 8rem;
+      line-height: 8rem;
+      // text-align: center;
+      border-radius: 50%;
+      transition: all 1.5s;
+      &:hover {
+        padding: 1rem;
+        background-color: $orange;
+        span {
+          background-color: $main_color;
+        }
+      }
+      span {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        font-size: 1.75rem;
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        padding: 1rem;
+        // padding: 0.6rem 1.05rem;
+        border-radius: 50%;
+        background-color: $orange;
+        transition: all 1.5s;
+      }
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  height: 5rem;
+  background-color: $main_color;
+
+  &_content {
+    // line-height: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .soc_icons {
+    display: flex;
+    .icon {
+      i {
+        margin-right: 1rem;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        line-height: 2.5rem;
+        text-align: center;
+      }
+      :hover {
+        background-color: $orange;
+      }
+    }
+
+    // justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: $media_navbar_width) {
+  .main_page {
+    // height: 65vh;
+    margin-top: -$media_navbar_height;
+    &_container {
+      justify-content: center;
+      h1 {
+        font-size: 35px;
+      }
+      a {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .specs_items {
+    flex-direction: column;
+  }
+  .specs_achieves {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .achieve {
+      width: 100%;
+      // text-align: center;
+    }
+  }
+  .workflow_content {
+    flex-direction: column;
+    // justify-content: space-between;
+    .content {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-height: 630px) {
+  .main_page {
+    min-height: 557px;
+  }
+}
